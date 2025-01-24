@@ -41,7 +41,7 @@ export default class LoadingScene extends Phaser.Scene {
     this.load.atlas(
       "doors",
       "./assets/tileset.png",
-      "./assets/atlas/atlas-pickups.json",
+      "./assets/atlas/atlas-doors.json",
     )
 
     // Wir möchten auf das Drücken der Leertaste reagieren können, daher müssen
@@ -68,6 +68,8 @@ export default class LoadingScene extends Phaser.Scene {
     // Würden wir das nicht machen, ist die obere lenke Ecke der Ankerpunkt, und es wird
     // schwierig den Text zu zentrieren.
     text.setOrigin(0.5, 0.5)
+
+    this.createAnimations()
   }
 
   /**
@@ -105,6 +107,16 @@ export default class LoadingScene extends Phaser.Scene {
       frames: this.anims.generateFrameNumbers("player", {
         start: 6,
         end: 8,
+      }),
+      frameRate: 10,
+      repeat: -1,
+    })
+
+    this.anims.create({
+      key: "player_left",
+      frames: this.anims.generateFrameNumbers("player", {
+        start: 3,
+        end: 5,
       }),
       frameRate: 10,
       repeat: -1,
