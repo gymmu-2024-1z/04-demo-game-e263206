@@ -77,13 +77,13 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     if (up.isDown) {
-      this.body.setVelocityX(this.speed)
+      this.body.setVelocityY(-this.speed)
       if (isIdle) this.anims.play("player_up", true)
       isIdle = false
     }
 
     if (down.isDown) {
-      this.body.setVelocityX(this.speed)
+      this.body.setVelocityY(this.speed)
       if (isIdle) this.anims.play("player_down", true)
       isIdle = false
     }

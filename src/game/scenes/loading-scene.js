@@ -122,6 +122,26 @@ export default class LoadingScene extends Phaser.Scene {
       repeat: -1,
     })
 
+    this.anims.create({
+      key: "player_up",
+      frames: this.anims.generateFrameNumbers("player", {
+        start: 9,
+        end: 11,
+      }),
+      frameRate: 10,
+      repeat: -1,
+    })
+
+    this.anims.create({
+      key: "player_down",
+      frames: this.anims.generateFrameNumbers("player", {
+        start: 0,
+        end: 2,
+      }),
+      frameRate: 10,
+      repeat: -1,
+    })
+
     // TODO: Erstellen Sie die restlichen Animationen
   }
 }
